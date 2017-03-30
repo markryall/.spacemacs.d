@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+#key: it
+#name : mocha it
+# --
+it( 'should $1', function() {
+	$0
+	expect( true ).to.equal( false ); 
+} );

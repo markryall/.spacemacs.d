@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+#key: desc
+#name : mocha describe
+# --
+describe( '$1', function() {
+	it( '$2', function() {
+		$0
+		expect( true ).to.equal( false );
+	} );
+} );
+

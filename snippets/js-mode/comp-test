@@ -1,0 +1,46 @@
+# -*- mode: snippet -*-
+#key: comp-test
+#name : component test
+# --
+/**
+ * External dependencies
+ */
+import { expect } from 'chai';
+import React from 'react';
+import { shallow } from 'enzyme';
+import { stub } from 'sinon';
+
+/**
+ * Internal dependencies
+ */
+import useMockery from 'test/helpers/use-mockery';
+
+describe( '$1', function() {
+	const translate = stub();
+	let $1, abtest;
+
+	useMockery( ( mockery ) => {
+		mockery.registerMock( 'lib/abtest', abtest );
+	} );
+
+	before( () => {
+		$1 = require( '..' ).$1;
+	} );
+
+	beforeEach( () => {
+		translate.returns( 'translated content' );
+	} );
+
+	it( 'should default to noop for translation', function() {
+		const wrapper = shallow( <$1 /> );
+
+		expect( wrapper.find( 'p' ).props().children ).to.equal( undefined );
+	} );
+
+	it( 'should render translated content', function() {
+		const wrapper = shallow( <$1 translate={ translate }></$1> );
+
+		expect( wrapper.find( 'p' ).props().children ).to.equal( 'translated content' );
+		expect( translate ).to.have.been.calledWith( 'content' );
+	} );
+} );

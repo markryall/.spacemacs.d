@@ -1,8 +1,7 @@
 # -*- mode: snippet -*-
 #key: it
-#name : mocha it
+#name: jest it
 # --
-it( 'should $1', function() {
-	$0
-	expect( true ).to.equal( false ); 
-} );
+it("should $1", () => {
+  $0
+});

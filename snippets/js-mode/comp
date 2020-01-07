@@ -1,39 +1,21 @@
 # -*- mode: snippet -*-
 #key: comp
-#name : component
+#name: component
 # --
-/**
- * External dependencies
- */
-import React, { Component, PropTypes } from 'react';
-import { connect } from 'react-redux';
-import { localize } from 'i18n-calypso';
-import { noop } from 'lodash';
+import React from "react";
+import { string, func } from "prop-types";
 
-/**
- * Internal dependencies
- */
-
-export class $1 extends Component {
-	static propTypes = {
-		translate: PropTypes.func.isRequired,
-	}
-
-	static defaultProps = {
-		translate: noop,
-	}
-
-	render() {
-		const { translate } = this.props;
-		$0
-		return <p>{ translate( 'content' ) }</p>;
-	}
+export default function $1({
+}) {
+  return (
+    <>
+      $0
+    </>
+  );
 }
 
-const mapStateToProps = null;
-const mapDispatchToProps = null;
+$1.propTypes = {
+};
 
-export default connect(
-	mapStateToProps,
-	mapDispatchToProps,
-)( localize( $1 ) );
+$1.defaultProps = {
+};

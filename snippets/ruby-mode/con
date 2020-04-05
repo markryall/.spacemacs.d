@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-#key: cont
+#key: con
 #name: rspec context
 # --
 context "$1" do

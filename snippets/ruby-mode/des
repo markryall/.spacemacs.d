@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-#key: desc
+#key: des
 #name: rspec describe
 # --
 describe "$1" do

@@ -1,9 +1,12 @@
 #!/usr/bin/env ruby
 
-# iTerm2 preferences:
+# Step 1: Copy this script somewhere
+# cp bin/iterm_command_click.rb ~
+
+# Step 2: Set iTerm2 preferences
 # Profiles > Advanced > "Semantic History"
-# Choose "Always run command..."
-# Enter: ~/code/github/Fresho-Org/fresho/bin/iterm_command_click "\1" "\2" "\3" "\4" "\5"
+# Choose "Always run command..." and enter:
+# ~/iterm_command_click "\1" "\2" "\3" "\4" "\5"
 
 filename, linenumber, _textbefore, _textafter, workingdir = *ARGV
 
